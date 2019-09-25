@@ -1,8 +1,8 @@
 #!/bin/bash
 
-source /opt/intel/compiler/latest/bin/compilervars.sh intel64
-source /opt/intel/impi/latest/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
-source /home/cmcantal/geopm-env.sh
+#source /opt/intel/compiler/latest/bin/compilervars.sh intel64
+#source /opt/intel/impi/latest/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
+#source /home/cmcantal/geopm-env.sh
 
 NUM_NODES=2
 RANKS_PER_NODE=4

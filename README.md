@@ -13,7 +13,20 @@ of experiments that are documented here.
 This tutorial is derived from the more general GEOPM tutorial that
 is distributed as part of the source code:
 
-https://github.com/geopm/geopm/tree/dev/tutorial
+    https://github.com/geopm/geopm/tree/dev/tutorial
+
+Known Issues
+------------
+GEOPM requires access to some Model Specific Registers (MSRs).  This
+is typically enabled through the msr-safe kernel driver:
+
+    https://github.com/LLNL/msr-safe
+
+Access to this driver on endeavor at the time of this writing can be
+made available on a limited basis on some nodes for specific users.
+Please contact Christopher Cantalupo
+<christopher.m.cantalupo@intel.com> for information about getting
+access to msr-safe on endeavor.
 
 Environment
 -----------
