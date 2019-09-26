@@ -42,7 +42,7 @@ geopmlaunch impi \
 
 ## Using the Energy Efficient Agent
 STICKER_FREQ=$(geopmread FREQUENCY_STICKER board 0)
-MIN_FREQ=$(($STICKER_FREQ - 400000000))
+MIN_FREQ=$(geopmread FREQUENCY_MIN board 0)
 PERF_MARGIN=0.1
 
 geopmagent -a energy_efficient \

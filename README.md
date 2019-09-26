@@ -151,9 +151,9 @@ different policies.  One policy the maximum frequency control is set
 to the sticker frequency of the processor and kept there throughout
 the run (maximum and minimum frequency in the policy are both set to
 sticker).  In the other policy the energy_efficient Agent is allowed
-to reduce the frequency by up to 400 MHz or until a 10% degradation in
-performance is detected.  In the reports generated, the one named
-"efficient.report" should show an energy savings when compared against
-the values in the "fixed.report" file.
+to reduce the frequency until a 10% degradation in performance is
+detected.  In the reports generated, the one named "efficient.report"
+should show an energy savings when compared against the values in the
+"fixed.report" file.
 
 
