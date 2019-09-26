@@ -34,11 +34,17 @@ geopmlaunch impi \
             --geopm-trace=tutorial_2.trace \
             -- ./tutorial_2
 
-## Using the Energy Efficient Agent
-echo '{"loop-count": 500,' > bench_config.json
-echo ' "region": ["dgemm", "stream"],' >> bench_config.json
-echo ' "big-o": [28.0, 1.75]}' >> bench_config.json
+## Use OMPT to discover regions
+echo '{"loop-count": 10,' > bench_config.json
+echo ' "region": ["dgemm-unmarked", "stream-unmarked", "all2all-unmarked"],' >> bench_config.json
+echo ' "big-o": [28.0, 1.75, 0.1]}' >> bench_config.json
+geopmlaunch impi \
+            -ppn $RANKS_PER_NODE \
+            -n $TOTAL_RANKS \
+            --geopm-report=ompt.report \
+            -- geopmbench bench_config.json
 
+## Using the Energy Efficient Agent
 STICKER_FREQ=$(geopmread FREQUENCY_STICKER board 0)
 MIN_FREQ=$(($STICKER_FREQ - 400000000))
 PERF_MARGIN=0.1
@@ -50,6 +56,10 @@ geopmagent -a energy_efficient \
 geopmagent -a energy_efficient \
            -p $MIN_FREQ,$STICKER_FREQ,$PERF_MARGIN \
            > efficient_policy.json
+
+echo '{"loop-count": 500,' > bench_config.json
+echo ' "region": ["dgemm", "stream", "all2all"],' >> bench_config.json
+echo ' "big-o": [28.0, 1.75, 0.1]}' >> bench_config.json
 
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
