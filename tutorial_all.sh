@@ -35,7 +35,7 @@ geopmlaunch impi \
             -- ./tutorial_2
 
 ## Using the Energy Efficient Agent
-echo '{"loop-count": 10,' > bench_config.json
+echo '{"loop-count": 500,' > bench_config.json
 echo ' "region": ["dgemm", "stream"],' >> bench_config.json
 echo ' "big-o": [28.0, 1.75]}' >> bench_config.json
 
