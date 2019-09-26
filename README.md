@@ -156,9 +156,4 @@ performance is detected.  In the reports generated, the one named
 "efficient.report" should show an energy savings when compared against
 the values in the "fixed.report" file.
 
-Agent and IOGroup extension
----------------------------
-See agent and iogroup sub-directories and their enclosed README.md
-files for information about how to extend the GEOPM runtime through
-the development of plugins.
 
