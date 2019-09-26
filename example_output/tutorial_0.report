@@ -1,17 +1,17 @@
 ##### geopm 1.0.0+dev189g7733535 #####
-Start Time: Wed Sep 25 18:54:53 2019
+Start Time: Wed Sep 25 19:46:35 2019
 Profile: ./tutorial_0
 Agent: monitor
 Policy: {}
 
-Host: mcfly11
+Host: mcfly15
 Region unmarked-region (0x00000000725e8066):
-    runtime (sec): 5.08601
-    sync-runtime (sec): 5.01279
-    package-energy (joules): 1076.22
-    dram-energy (joules): 47.2735
-    power (watts): 214.696
-    frequency (%): 133.333
+    runtime (sec): 5.05462
+    sync-runtime (sec): 5.01656
+    package-energy (joules): 1098.3
+    dram-energy (joules): 60.9233
+    power (watts): 218.936
+    frequency (%): 133.334
     frequency (Hz): 2.8e+09
     mpi-runtime (sec): 0
     count: 0
@@ -27,23 +27,23 @@ Epoch Totals:
     count: 0
     epoch-runtime-ignore (sec): 0
 Application Totals:
-    runtime (sec): 5.11391
-    package-energy (joules): 1084.86
-    dram-energy (joules): 47.653
-    power (watts): 212.138
+    runtime (sec): 5.07048
+    package-energy (joules): 1102.09
+    dram-energy (joules): 61.131
+    power (watts): 217.354
     mpi-runtime (sec): 0
     ignore-time (sec): 0
-    geopmctl memory HWM: 112188 kB
+    geopmctl memory HWM: 109612 kB
     geopmctl network BW (B/sec): 0
 
-Host: mcfly12
+Host: mcfly16
 Region unmarked-region (0x00000000725e8066):
-    runtime (sec): 5.08819
-    sync-runtime (sec): 5.01274
-    package-energy (joules): 1109.82
-    dram-energy (joules): 64.4847
-    power (watts): 221.399
-    frequency (%): 133.333
+    runtime (sec): 5.0515
+    sync-runtime (sec): 5.01161
+    package-energy (joules): 1043.89
+    dram-energy (joules): 55.3079
+    power (watts): 208.295
+    frequency (%): 133.334
     frequency (Hz): 2.8e+09
     mpi-runtime (sec): 0
     count: 0
@@ -59,12 +59,12 @@ Epoch Totals:
     count: 0
     epoch-runtime-ignore (sec): 0
 Application Totals:
-    runtime (sec): 5.11363
-    package-energy (joules): 1118.11
-    dram-energy (joules): 64.9562
-    power (watts): 218.653
+    runtime (sec): 5.06425
+    package-energy (joules): 1046.08
+    dram-energy (joules): 55.425
+    power (watts): 206.562
     mpi-runtime (sec): 0
     ignore-time (sec): 0
-    geopmctl memory HWM: 108028 kB
+    geopmctl memory HWM: 109504 kB
     geopmctl network BW (B/sec): 0
 

@@ -1,179 +1,179 @@
 ##### geopm 1.0.0+dev189g7733535 #####
-Start Time: Wed Sep 25 19:08:14 2019
+Start Time: Wed Sep 25 20:00:41 2019
 Profile: geopmbench
 Agent: energy_efficient
 Policy: {"FREQ_MIN": 1000000000.000000, "FREQ_MAX": 2100000000.000000, "PERF_MARGIN": 0.100000}
 
 
-Host: mcfly11
+Host: mcfly15
 Final online freq map: 
-    0x00000000d691da00: 1377272727.272727
+    0x00000000d691da00: 1000000000.000000
 
 Region stream (0x00000000d691da00):
-    runtime (sec): 398.381
-    sync-runtime (sec): 381.156
-    package-energy (joules): 78037.6
-    dram-energy (joules): 10403.5
-    power (watts): 204.739
-    frequency (%): 66.991
-    frequency (Hz): 1.40681e+09
+    runtime (sec): 369.757
+    sync-runtime (sec): 337.47
+    package-energy (joules): 61347.6
+    dram-energy (joules): 10300.8
+    power (watts): 181.787
+    frequency (%): 50.9344
+    frequency (Hz): 1.06962e+09
     mpi-runtime (sec): 0
     count: 500
-    requested-online-frequency: 1377272727.272727
+    requested-online-frequency: 1000000000.000000
 Region dgemm (0x00000000a74bbf35):
-    runtime (sec): 222.697
-    sync-runtime (sec): 213.727
-    package-energy (joules): 66412.7
-    dram-energy (joules): 4450.61
-    power (watts): 310.737
-    frequency (%): 92.9123
-    frequency (Hz): 1.95116e+09
+    runtime (sec): 264.216
+    sync-runtime (sec): 243.445
+    package-energy (joules): 73652.7
+    dram-energy (joules): 5239.41
+    power (watts): 302.544
+    frequency (%): 93.351
+    frequency (Hz): 1.96037e+09
     mpi-runtime (sec): 0
     count: 500
 Region all2all (0x000000003ddc81bf):
-    runtime (sec): 70.2783
-    sync-runtime (sec): 70.1227
-    package-energy (joules): 10301.8
-    dram-energy (joules): 890.011
-    power (watts): 146.91
-    frequency (%): 48.3184
-    frequency (Hz): 1.01469e+09
-    mpi-runtime (sec): 70.26
+    runtime (sec): 62.1376
+    sync-runtime (sec): 58.9493
+    package-energy (joules): 8981.87
+    dram-energy (joules): 867.001
+    power (watts): 152.366
+    frequency (%): 47.8768
+    frequency (Hz): 1.00541e+09
+    mpi-runtime (sec): 62.1268
     count: 500
 Region MPI_Barrier (0x000000007b561f45):
-    runtime (sec): 24.8474
-    sync-runtime (sec): 7.06846
-    package-energy (joules): 767.136
-    dram-energy (joules): 70.1349
-    power (watts): 108.53
-    frequency (%): 49.3225
-    frequency (Hz): 1.03577e+09
+    runtime (sec): 11.99
+    sync-runtime (sec): 0.0250354
+    package-energy (joules): 3.97107
+    dram-energy (joules): 0.373199
+    power (watts): 158.618
+    frequency (%): 53.3306
+    frequency (Hz): 1.11994e+09
     mpi-runtime (sec): 0
     count: 500
 Region model-init (0x00000000644f9787):
-    runtime (sec): 2.20821
-    sync-runtime (sec): 2.20422
-    package-energy (joules): 511.968
-    dram-energy (joules): 57.5141
-    power (watts): 232.267
-    frequency (%): 100
-    frequency (Hz): 2.1e+09
-    mpi-runtime (sec): 0
-    count: 1
-Region unmarked-region (0x00000000725e8066):
-    runtime (sec): 0.272147
-    sync-runtime (sec): 44.3245
-    package-energy (joules): 8209.55
-    dram-energy (joules): 794.846
-    power (watts): 185.215
-    frequency (%): 66.7188
-    frequency (Hz): 1.4011e+09
-    mpi-runtime (sec): 0
-    count: 0
-Epoch Totals:
-    runtime (sec): 716.398
-    sync-runtime (sec): 716.389
-    package-energy (joules): 163727
-    dram-energy (joules): 16609
-    power (watts): 228.545
-    frequency (%): 72.6977
-    frequency (Hz): 1.52665e+09
-    mpi-runtime (sec): 70.26
-    count: 500
-    epoch-runtime-ignore (sec): 24.8474
-Application Totals:
-    runtime (sec): 718.698
-    package-energy (joules): 164249
-    dram-energy (joules): 16667
-    power (watts): 228.537
-    mpi-runtime (sec): 70.26
-    ignore-time (sec): 24.8474
-    geopmctl memory HWM: 112312 kB
-    geopmctl network BW (B/sec): 0.0445249
-
-Host: mcfly12
-Final online freq map: 
-    0x00000000d691da00: 1300000000.000000
-
-Region stream (0x00000000d691da00):
-    runtime (sec): 413.502
-    sync-runtime (sec): 399.038
-    package-energy (joules): 80608.4
-    dram-energy (joules): 11979.3
-    power (watts): 202.007
-    frequency (%): 63.57
-    frequency (Hz): 1.33497e+09
-    mpi-runtime (sec): 0
-    count: 500
-    requested-online-frequency: 1300000000.000000
-Region dgemm (0x00000000a74bbf35):
-    runtime (sec): 213.354
-    sync-runtime (sec): 202.877
-    package-energy (joules): 62326.7
-    dram-energy (joules): 4937.03
-    power (watts): 307.215
-    frequency (%): 93.6604
-    frequency (Hz): 1.96687e+09
-    mpi-runtime (sec): 0
-    count: 500
-Region all2all (0x000000003ddc81bf):
-    runtime (sec): 72.1318
-    sync-runtime (sec): 70.3375
-    package-energy (joules): 10460.6
-    dram-energy (joules): 1134.73
-    power (watts): 148.72
-    frequency (%): 48.2734
-    frequency (Hz): 1.01374e+09
-    mpi-runtime (sec): 72.1149
-    count: 500
-Region MPI_Barrier (0x000000007b561f45):
-    runtime (sec): 17.2366
-    sync-runtime (sec): 5.54201
-    package-energy (joules): 765.314
-    dram-energy (joules): 72.3651
-    power (watts): 138.093
-    frequency (%): 56.9875
-    frequency (Hz): 1.19674e+09
-    mpi-runtime (sec): 0
-    count: 500
-Region model-init (0x00000000644f9787):
-    runtime (sec): 2.18623
-    sync-runtime (sec): 2.16504
-    package-energy (joules): 507.784
-    dram-energy (joules): 63.9043
-    power (watts): 234.537
+    runtime (sec): 2.19353
+    sync-runtime (sec): 2.18632
+    package-energy (joules): 493.813
+    dram-energy (joules): 61.3289
+    power (watts): 225.865
     frequency (%): 100.001
     frequency (Hz): 2.10001e+09
     mpi-runtime (sec): 0
     count: 1
 Region unmarked-region (0x00000000725e8066):
-    runtime (sec): 0.272585
-    sync-runtime (sec): 38.644
-    package-energy (joules): 7374.96
-    dram-energy (joules): 805.85
-    power (watts): 190.844
-    frequency (%): 67.2285
-    frequency (Hz): 1.4118e+09
+    runtime (sec): 0.860111
+    sync-runtime (sec): 69.0328
+    package-energy (joules): 14637.1
+    dram-energy (joules): 1694.41
+    power (watts): 212.031
+    frequency (%): 63.0756
+    frequency (Hz): 1.32459e+09
     mpi-runtime (sec): 0
     count: 0
 Epoch Totals:
-    runtime (sec): 716.415
-    sync-runtime (sec): 716.396
-    package-energy (joules): 161527
-    dram-energy (joules): 18928.7
-    power (watts): 225.472
-    frequency (%): 70.7301
-    frequency (Hz): 1.48533e+09
-    mpi-runtime (sec): 72.1149
+    runtime (sec): 708.917
+    sync-runtime (sec): 708.902
+    package-energy (joules): 158619
+    dram-energy (joules): 18101.7
+    power (watts): 223.753
+    frequency (%): 66.4189
+    frequency (Hz): 1.3948e+09
+    mpi-runtime (sec): 62.1268
     count: 500
-    epoch-runtime-ignore (sec): 17.2366
+    epoch-runtime-ignore (sec): 11.99
 Application Totals:
-    runtime (sec): 718.696
-    package-energy (joules): 162050
-    dram-energy (joules): 18993.6
-    power (watts): 225.478
-    mpi-runtime (sec): 72.1149
-    ignore-time (sec): 17.2366
-    geopmctl memory HWM: 112120 kB
+    runtime (sec): 711.165
+    package-energy (joules): 159121
+    dram-energy (joules): 18163.6
+    power (watts): 223.747
+    mpi-runtime (sec): 62.1268
+    ignore-time (sec): 11.99
+    geopmctl memory HWM: 107456 kB
+    geopmctl network BW (B/sec): 0.0449966
+
+Host: mcfly16
+Final online freq map: 
+    0x00000000d691da00: 2100000000.000000
+
+Region stream (0x00000000d691da00):
+    runtime (sec): 347.51
+    sync-runtime (sec): 322.277
+    package-energy (joules): 70935.9
+    dram-energy (joules): 9730.31
+    power (watts): 220.108
+    frequency (%): 99.9493
+    frequency (Hz): 2.09894e+09
+    mpi-runtime (sec): 0
+    count: 500
+    requested-online-frequency: 2100000000.000000
+Region dgemm (0x00000000a74bbf35):
+    runtime (sec): 218.084
+    sync-runtime (sec): 200.18
+    package-energy (joules): 61843.9
+    dram-energy (joules): 4528.97
+    power (watts): 308.941
+    frequency (%): 93.5953
+    frequency (Hz): 1.9655e+09
+    mpi-runtime (sec): 0
+    count: 500
+Region MPI_Barrier (0x000000007b561f45):
+    runtime (sec): 77.4854
+    sync-runtime (sec): 68.9642
+    package-energy (joules): 8870.63
+    dram-energy (joules): 768.747
+    power (watts): 128.627
+    frequency (%): 52.0783
+    frequency (Hz): 1.09364e+09
+    mpi-runtime (sec): 0
+    count: 500
+Region all2all (0x000000003ddc81bf):
+    runtime (sec): 65.0949
+    sync-runtime (sec): 60.1848
+    package-energy (joules): 8490.07
+    dram-energy (joules): 826.983
+    power (watts): 141.067
+    frequency (%): 47.6204
+    frequency (Hz): 1.00003e+09
+    mpi-runtime (sec): 65.0857
+    count: 500
+Region model-init (0x00000000644f9787):
+    runtime (sec): 2.15957
+    sync-runtime (sec): 2.14628
+    package-energy (joules): 461.732
+    dram-energy (joules): 59.887
+    power (watts): 215.131
+    frequency (%): 100.001
+    frequency (Hz): 2.10001e+09
+    mpi-runtime (sec): 0
+    count: 1
+Region unmarked-region (0x00000000725e8066):
+    runtime (sec): 0.847732
+    sync-runtime (sec): 57.3908
+    package-energy (joules): 13198.7
+    dram-energy (joules): 1440.61
+    power (watts): 229.979
+    frequency (%): 87.9422
+    frequency (Hz): 1.84679e+09
+    mpi-runtime (sec): 0
+    count: 0
+Epoch Totals:
+    runtime (sec): 708.984
+    sync-runtime (sec): 708.947
+    package-energy (joules): 163329
+    dram-energy (joules): 17295
+    power (watts): 230.383
+    frequency (%): 88.0872
+    frequency (Hz): 1.84983e+09
+    mpi-runtime (sec): 65.0857
+    count: 500
+    epoch-runtime-ignore (sec): 77.4854
+Application Totals:
+    runtime (sec): 711.187
+    package-energy (joules): 163803
+    dram-energy (joules): 17355.6
+    power (watts): 230.323
+    mpi-runtime (sec): 65.0857
+    ignore-time (sec): 77.4854
+    geopmctl memory HWM: 109460 kB
     geopmctl network BW (B/sec): 0
 
