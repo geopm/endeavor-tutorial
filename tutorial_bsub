@@ -6,19 +6,14 @@ if [ $# -ne 1 ]; then
 fi
 
 script=$1
-
-source /opt/intel/compiler/latest/bin/compilervars.sh intel64
-source /opt/intel/impi/latest/compilers_and_libraries/linux/mpi/intel64/bin/mpivars.sh
-source /home/cmcantal/geopm-env.sh
-
 bsub -P R:GEOPM \
      -q workq \
-     -L /bin/bash \
      -W 30 \
      -J GEOPM:$script \
      -o ${script}.out \
      -e ${script}.err \
      -n 2 \
      -R "2*{select[clx2s8260L] span[ptile=1]}" \
+     -l MSRSAFE=1 \
      $script
 

@@ -13,20 +13,31 @@ of experiments that are documented here.
 This tutorial is derived from the more general GEOPM tutorial that
 is distributed as part of the source code:
 
-    https://github.com/geopm/geopm/tree/dev/tutorial
+https://github.com/geopm/geopm/tree/dev/tutorial
 
-Known Issues
-------------
-GEOPM requires access to some Model Specific Registers (MSRs).  This
-is typically enabled through the msr-safe kernel driver:
 
-    https://github.com/LLNL/msr-safe
+General
+-------
+To use GEOPM you will need access to certain MSR (model specific
+registers) on the compute nodes. Full access to all MSRs is not
+permitted for security reasons. We use the "msr_safe" kernel driver to
+grant access to a certain white-list of MSRs. As this enables you to
+control certain power constraints the nodes will be automatically
+rebooted after your job is completed. This ensures no changes to MSRs
+a user can do would impact the next user on the same node.  How to
+enable MSR_SAFE access:
 
-Access to this driver on endeavor at the time of this writing can be
-made available on a limited basis on some nodes for specific users.
-Please contact Christopher Cantalupo
-<christopher.m.cantalupo@intel.com> for information about getting
-access to msr-safe on endeavor.
+- You need to be in group msr_safe to use MSRs. Access requires a
+  business reason - write an e-mail with your request and
+  justification to crt-dc@intel.com.
+
+- To enable the msr_safe kernel module use: bsub -l MSRSAFE=1 ....
+  nodes will be rebooted after job is done so DO NOT spam jobs with
+  this option.
+
+- BKM is to use an interactive job and do all measurements within a
+  single job. High node count jobs should be announced to
+  crt-dc@intel.com.
 
 Environment
 -----------
@@ -155,5 +166,3 @@ to reduce the frequency until a 10% degradation in performance is
 detected.  In the reports generated, the one named "efficient.report"
 should show an energy savings when compared against the values in the
 "fixed.report" file.
-
-
