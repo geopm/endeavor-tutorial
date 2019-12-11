@@ -36,7 +36,7 @@ echo ' "region": ["dgemm", "stream"],' >> bench_config.json
 echo ' "big-o": [28.0, 1.75]}' >> bench_config.json
 
 STICKER_FREQ=$(geopmread FREQUENCY_STICKER board 0)
-MIN_FREQ=$(($STICKER_FREQ - 400000000))
+MIN_FREQ=$(geopmread FREQUENCY_MIN board 0)
 PERF_MARGIN=0.1
 
 geopmagent -a energy_efficient \
