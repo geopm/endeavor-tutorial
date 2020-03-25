@@ -13,7 +13,7 @@ bsub -P R:GEOPM \
      -o ${script}.out \
      -e ${script}.err \
      -n 2 \
-     -R "2*{select[clx2s8260L] span[ptile=1]}" \
+     -R "2*{select[clx2s8260hdr] span[ptile=1]}" \
      -l MSRSAFE=1 \
      $script
 
