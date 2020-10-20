@@ -11,7 +11,6 @@ TOTAL_RANKS=$(($RANKS_PER_NODE * $NUM_NODES))
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
             -n $TOTAL_RANKS \
-            -bootstrap ssh \
             --geopm-report=tutorial_0.report \
             --geopm-trace=tutorial_0.trace \
             --geopm-preload \
@@ -20,7 +19,6 @@ geopmlaunch impi \
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
             -n $TOTAL_RANKS \
-            -bootstrap ssh \
             --geopm-report=tutorial_1.report \
             --geopm-trace=tutorial_1.trace \
             --geopm-preload \
@@ -29,7 +27,6 @@ geopmlaunch impi \
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
             -n $TOTAL_RANKS \
-            -bootstrap ssh \
             --geopm-report=tutorial_2.report \
             --geopm-trace=tutorial_2.trace \
             -- ./tutorial_2
@@ -53,7 +50,6 @@ geopmagent -a energy_efficient \
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
             -n $TOTAL_RANKS \
-            -bootstrap ssh \
             --geopm-report=fixed.report \
             --geopm-agent=energy_efficient \
             --geopm-policy=fixed_policy.json \
@@ -62,7 +58,6 @@ geopmlaunch impi \
 geopmlaunch impi \
             -ppn $RANKS_PER_NODE \
             -n $TOTAL_RANKS \
-            -bootstrap ssh \
             --geopm-report=efficient.report \
             --geopm-agent=energy_efficient \
             --geopm-policy=efficient_policy.json \

@@ -7,13 +7,12 @@ fi
 
 script=$1
 bsub -P R:GEOPM \
-     -q workq \
-     -W 30 \
+     -p workq \
+     -t 30 \
      -J GEOPM:$script \
      -o ${script}.out \
      -e ${script}.err \
-     -n 2 \
-     -R "2*{select[clx2s8260hdr] span[ptile=1]}" \
+     -C clx2s8260L \
+     -N 2 \
      -l MSRSAFE=1 \
      $script
-
