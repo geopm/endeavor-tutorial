@@ -82,19 +82,18 @@ The first thing an HPC application user will want to do when
 integrating their application with the GEOPM runtime is to analyze
 performance of the application without modifying its source code.
 This can be enabled by using the GEOPM launcher script to launch the
-application while specifying the --geopm-preload option:
+application:
 
 
     geopmlaunch impi \
                 -ppn 4  \
                 -n 8 \
-                --geopm-preload \
                 --geopm-report=tutorial_0.report \
                 --geopm-trace=tutorial_0.trace \
                 ./tutorial_0
 
-The LD_PRELOAD environment variable set when using the --geopm-preload
-option enables the GEOPM library to interpose on MPI using the PMPI
+The LD_PRELOAD environment variable is set when using the geopmlaunch
+which enables the GEOPM library to interpose on MPI using the PMPI
 interface.  Linking directly to libgeopm has the same effect, but this
 is not done in the Makefile for tutorial_0 or tutorial_1.  See the
 geopm(7) man page for a detailed description of the other environment

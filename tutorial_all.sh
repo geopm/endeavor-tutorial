@@ -13,7 +13,6 @@ geopmlaunch impi \
             -n $TOTAL_RANKS \
             --geopm-report=tutorial_0.report \
             --geopm-trace=tutorial_0.trace \
-            --geopm-preload \
             -- ./tutorial_0
 
 geopmlaunch impi \
@@ -21,7 +20,6 @@ geopmlaunch impi \
             -n $TOTAL_RANKS \
             --geopm-report=tutorial_1.report \
             --geopm-trace=tutorial_1.trace \
-            --geopm-preload \
             -- ./tutorial_1
 
 geopmlaunch impi \
@@ -62,4 +60,3 @@ geopmlaunch impi \
             --geopm-agent=energy_efficient \
             --geopm-policy=efficient_policy.json \
             -- geopmbench bench_config.json
-
