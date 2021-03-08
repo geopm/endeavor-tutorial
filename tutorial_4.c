@@ -35,6 +35,7 @@
 #include <mpi.h>
 #include <geopm.h>
 
+#include "geopm_imbalancer.h"
 #include "tutorial_region.h"
 
 
@@ -54,38 +55,15 @@ int main(int argc, char **argv)
         printf("MPI_COMM_WORLD size: %d\n", size);
     }
 
-    uint64_t sleep_rid;
-    uint64_t stream_rid;
     uint64_t dgemm_rid;
-    uint64_t all2all_rid;
-
-    if (!err) {
-        err = geopm_prof_region("tutorial_sleep",
-                                GEOPM_REGION_HINT_UNKNOWN,
-                                &sleep_rid);
-    }
-    if (!err) {
-        err = geopm_prof_region("tutorial_stream",
-                                GEOPM_REGION_HINT_MEMORY,
-                                &stream_rid);
-    }
     if (!err) {
         err = geopm_prof_region("tutorial_dgemm",
                                 GEOPM_REGION_HINT_COMPUTE,
                                 &dgemm_rid);
     }
-    if (!err) {
-        err = geopm_prof_region("tutorial_all2all",
-                                GEOPM_REGION_HINT_NETWORK,
-                                &all2all_rid);
-    }
 
-    int num_iter = 10;
-    double sleep_big_o = 1.0;
-    double stream0_big_o = 1.0;
-    double dgemm_big_o = 1.0;
-    double all2all_big_o = 1.0;
-    double stream1_big_o = 1.0;
+    int num_iter = 500;
+    double dgemm_big_o = 8.0;
 
     if (!rank) {
         printf("Beginning loop of %d iterations.\n", num_iter);
@@ -94,49 +72,22 @@ int main(int argc, char **argv)
     for (int i = 0; !err && i < num_iter; ++i) {
         err = geopm_prof_epoch();
         if (!err) {
-            err = geopm_prof_enter(sleep_rid);
-        }
-        if (!err) {
-            err = tutorial_sleep(sleep_big_o, 0);
-        }
-        if (!err) {
-            err = geopm_prof_exit(sleep_rid);
-        }
-        if (!err) {
-            err = geopm_prof_enter(stream_rid);
-        }
-        if (!err) {
-            err = tutorial_stream(stream0_big_o, 0);
-        }
-        if (!err) {
-            err = geopm_prof_exit(stream_rid);
-        }
-        if (!err) {
             err = geopm_prof_enter(dgemm_rid);
         }
         if (!err) {
-            err = tutorial_dgemm(dgemm_big_o, 0);
+            err = geopm_imbalancer_enter();
+        }
+        if (!err) {
+            err = tutorial_dgemm_static(dgemm_big_o, 0);
+        }
+        if (!err) {
+            err = geopm_imbalancer_exit();
         }
         if (!err) {
             err = geopm_prof_exit(dgemm_rid);
         }
         if (!err) {
-            err = geopm_prof_enter(stream_rid);
-        }
-        if (!err) {
-            err = tutorial_stream(stream1_big_o, 0);
-        }
-        if (!err) {
-            err = geopm_prof_exit(stream_rid);
-        }
-        if (!err) {
-            err = geopm_prof_enter(all2all_rid);
-        }
-        if (!err) {
-            err = tutorial_all2all(all2all_big_o, 0);
-        }
-        if (!err) {
-            err = geopm_prof_exit(all2all_rid);
+            err = MPI_Barrier(MPI_COMM_WORLD);
         }
         if (!err && !rank) {
             printf("Iteration=%.3d\r", i);
@@ -146,6 +97,9 @@ int main(int argc, char **argv)
     if (!err && !rank) {
         printf("Completed loop.                    \n");
         fflush(stdout);
+    }
+    if (!err) {
+        err = tutorial_dgemm_static(0.0, 0);
     }
 
     int err_fin = MPI_Finalize();
