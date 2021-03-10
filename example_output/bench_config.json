@@ -1,3 +1,0 @@
-{"loop-count": 500,
- "region": ["dgemm", "stream", "all2all"],
- "big-o": [28.0, 1.75, 0.1]}

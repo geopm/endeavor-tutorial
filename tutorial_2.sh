@@ -31,25 +31,27 @@
 #  OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-source $GEOPM_SOURCE/integration/config/build_env.sh
 
-# GEOPM_CFLAGS: Contains compile options for geopm.
-if [ ! "$GEOPM_CFLAGS" ]; then
-    GEOPM_CFLAGS="-I$GEOPM_INC"
+if ! which geopmread >/dev/null; then
+    echo 'Error: geopmread is not in PATH, source /panfs/users/cmcantal/geopm-env.sh'
+    exit -1
 fi
 
-# GEOPM_LDFLAGS: Contains link options for geopm.
-if [ ! "$GEOPM_LDFLAGS" ]; then
-    GEOPM_LDFLAGS="-L$GEOPM_LIB"
-fi
+# Run on 2 nodes
+# with 8 total application MPI ranks
+# launch geopm controller as an MPI process
+# create a report file
+# create trace files
 
-# OMP_FLAGS: Flags for enabling OpenMP
-if [ ! "$OMP_FLAGS" ]; then
-    OMP_FLAGS="-qopenmp"
-fi
+NUM_NODES=2
+RANKS_PER_NODE=4
+TOTAL_RANKS=$((${RANKS_PER_NODE} * ${NUM_NODES}))
 
-make \
-CC=icc CXX=icpc MPICC=mpiicc MPICXX=mpiicpc MPIFC=mpiifort MPIF77=mpiifort \
-CFLAGS="$GEOPM_CFLAGS $OMP_FLAGS -DTUTORIAL_ENABLE_MKL -D_GNU_SOURCE -std=c99 -xAVX $CFLAGS" \
-CXXFLAGS="$GEOPM_CFLAGS $OMP_FLAGS -DTUTORIAL_ENABLE_MKL -D_GNU_SOURCE -std=c++11 -xAVX $CXXFLAGS" \
-LDFLAGS="$GEOPM_LDFLAGS $OMP_FLAGS -lm -lrt -mkl -xAVX $LDFLAGS"
+# Use GEOPM launcher wrapper script with Intel(R) MPI
+geopmlaunch impi \
+            -ppn ${RANKS_PER_NODE} \
+            -n ${TOTAL_RANKS} \
+            --geopm-ctl=process \
+            --geopm-report=tutorial_2_report \
+            --geopm-trace=tutorial_2_trace \
+            -- ./tutorial_2
